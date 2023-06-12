@@ -5,13 +5,18 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { notes } from "../db";
 
+// NativeStackScreenProps is a type that defines the props that are passed to the screen components in the stack.
 type NoteScreenProps = NativeStackScreenProps<RootStackParamList, "Note">;
+// NoteScreenRouteProp is a type that defines the route prop that is passed to the screen components in the stack.
 type NoteScreenRouteProp = NoteScreenProps["route"];
 
 const NoteScreen = () => {
+  // useRoute is a hook that returns the route prop of the screen component.
   const route = useRoute<NoteScreenRouteProp>();
 
+  // Get the noteId from the route params.
   const { noteId } = route.params;
+  // Find the note with the noteId.
   const note = notes.find((note) => note.id === noteId) as INote;
 
   return (

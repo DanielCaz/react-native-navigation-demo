@@ -4,10 +4,13 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { notes } from "../db";
 
+// NativeStackScreenProps is a type that defines the props that are passed to the screen components in the stack.
 type HomeScreenProps = NativeStackScreenProps<RootStackParamList, "Home">;
+// HomeScreenNavigationProp is a type that defines the navigation prop that is passed to the screen components in the stack.
 type HomeScreenNavigationProp = HomeScreenProps["navigation"];
 
 const HomeScreen = () => {
+  // useNavigation is a hook that returns the navigation prop of the screen component.
   const navigator = useNavigation<HomeScreenNavigationProp>();
 
   return (
