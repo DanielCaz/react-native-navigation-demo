@@ -1,12 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
-import NoteScreen from "./screens/NoteScreen";
+import TodoScreen from "./screens/TodoScreen";
 
 // RootStackParamList is a type that defines the parameters that can be passed to the screens in the stack.
 export type RootStackParamList = {
   Home: undefined;
-  Note: { noteId: number };
+  Todo: { todoId: number };
 };
 
 // Create a native stack navigator. This is a stack navigator that uses native navigation components.
@@ -20,7 +20,7 @@ const App = () => {
       <Stack.Navigator>
         {/* Stack.Screen is a component that defines a screen in the stack. */}
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Note" component={NoteScreen} />
+        <Stack.Screen name="Todo" component={TodoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
